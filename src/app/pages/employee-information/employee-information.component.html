@@ -1,0 +1,193 @@
+<br />
+<br />
+<h2 class="h2 text-left">Personal Details</h2>
+<div class="text-left">
+  <form [formGroup]="employeeFormGroup" (ngSubmit)="onFormSubmit()">
+    <p>
+      <input
+        type="text"
+        id="firstname"
+        name="firstname"
+        placeholder="First Name"
+        formControlName="firstname"
+      />
+    </p>
+    <p>
+      <input
+        type="text"
+        id="lastname"
+        name="lastname"
+        placeholder="Last Name"
+        formControlName="lastname"
+      />
+    </p>
+    <p>
+      <input
+        type="text"
+        id="email"
+        name="email"
+        placeholder="Email"
+        formControlName="email"
+      />
+    </p>
+
+    <div class="contacts">
+      <div class="text-left">
+        <div formGroupName="contactDetailsFormGroup">
+          <h2 class="h2 text-left">Contact Details</h2>
+
+          <label class="text-left" for="address">Phone Numbers</label>
+          <br />
+          <div style="display: inline-block;">
+            <input
+              type="text"
+              id="landlineNumber"
+              name="landlineNumber"
+              placeholder="Landline Number"
+              formControlName="landlineNumber"
+            />
+          </div>
+          <span style="padding-left: 120px;"></span>
+          <div style="display: inline-block;">
+            <input
+              type="text"
+              id="mobileNumber"
+              name="mobileNumber"
+              placeholder="Mobile Number"
+              formControlName="mobileNumber"
+            />
+          </div>
+          <br /><br /><br />
+
+          <div
+            class="residential"
+            style="display: inline-block; overflow: auto;"
+          >
+            <label class="text-left" for="address">Residential Address </label>
+            <p>
+              <input
+                type="text"
+                id="addressLine1"
+                name="addressLine1"
+                placeholder="Street No"
+                formControlName="addressLine1"
+              />
+            </p>
+            <p>
+              <input
+                type="text"
+                id="addressLine2"
+                name="addressLine2"
+                placeholder="Street Name"
+                formControlName="addressLine2"
+              />
+            </p>
+            <p>
+              <input
+                type="text"
+                id="surburb"
+                name="surburb"
+                placeholder="Surburb"
+                formControlName="surburb"
+              />
+            </p>
+            <p>
+              <input
+                type="text"
+                id="city"
+                name="city"
+                placeholder="City"
+                formControlName="city"
+              />
+            </p>
+            <p>
+              <input
+                type="text"
+                id="postalCode"
+                name="postalCode"
+                placeholder="Postal Code"
+                formControlName="postalCode"
+              />
+            </p>
+          </div>
+          <span style="padding-left: 120px;"></span>
+          <div class="postal" style="display: inline-block; overflow: auto;">
+            <label class="text-left" for="address">Postal Address </label>
+            <p>
+              <input
+                type="text"
+                id="addressLine1"
+                name="addressLine1"
+                placeholder="Street No"
+                formControlName="addressLine1"
+              />
+            </p>
+            <p>
+              <input
+                type="text"
+                id="addressLine2"
+                name="addressLine2"
+                placeholder="Street Name"
+                formControlName="addressLine2"
+              />
+            </p>
+            <p>
+              <input
+                type="text"
+                id="surburb"
+                name="surburb"
+                placeholder="Surburb"
+                formControlName="surburb"
+              />
+            </p>
+            <p>
+              <input
+                type="text"
+                id="city"
+                name="city"
+                placeholder="City"
+                formControlName="city"
+              />
+            </p>
+            <p>
+              <input
+                type="text"
+                id="postalCode"
+                name="postalCode"
+                placeholder="Postal Code"
+                formControlName="postalCode"
+              />
+            </p>
+          </div>
+          <p>
+            <label for="isSameAddress"
+              >Postal same as Residential Address</label
+            >
+            <input
+              type="checkbox"
+              id="isSameAddress"
+              name="isSameAddress"
+              formControlName="isSameAddress"
+            />
+          </p>
+          <p>
+            <!--<label for="socialMedia"></label>-->
+            <input
+              type="text"
+              id="socialMedia"
+              placeholder="Social Media"
+              name="socialMedia"
+              formControlName="socialMedia"
+            />
+          </p>
+        </div>
+      </div>
+    </div>
+    <p>
+      <button class="btn btn-primary" type="submit">Submit</button>
+    </p>
+  </form>
+</div>
+
+<!--[formGroup]="contactDetailsFormGroup"
+[contactDetailsFormGroup]="employeeFormGroup"-->
