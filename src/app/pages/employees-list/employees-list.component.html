@@ -1,11 +1,41 @@
-<p>employees-list works!</p>
-<p>employees-list works!</p>
-<p>employees-list works!</p>
-<p>employees-list works!</p>
-<p>employees-list works!</p>
-<p>employees-list works!</p>
+<div class="el-main">
+    <h3>Below is a list of employees that have been recorded on the system</h3>
+    <div class="el-table">
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  
+  <ng-container matColumnDef="number">
+    <th mat-header-cell *matHeaderCellDef> Employee <br/>Number </th>
+    <td mat-cell *matCellDef="let element"> {{element.employee_id}} </td>
+  </ng-container>
+  
+  <!-- Name Column -->
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef> Employee Name </th>
+    <td mat-cell *matCellDef="let element"> {{element.firstName}} {{ element.lastName}} </td>
+  </ng-container>
 
-<p>employees-list works!</p>
-<p>employees-list works!</p>
+  <ng-container matColumnDef="phone">
+    <th mat-header-cell *matHeaderCellDef> Phone number </th>
+    <td mat-cell *matCellDef="let element"> {{element.phoneNumbers[0].phoneNumber}} </td>
+  </ng-container>
 
-<p>employees-list works!</p>
+  <ng-container matColumnDef="email">
+    <th mat-header-cell *matHeaderCellDef> Email Address </th>
+    <td mat-cell *matCellDef="let element"> {{element.emailAddress}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="edit">
+    <th mat-header-cell *matHeaderCellDef> Edit </th>
+    <td mat-cell *matCellDef="let element"> <button class="btn btn-primary">Edit</button> </td>
+  </ng-container>
+
+  <ng-container matColumnDef="delete">
+    <th mat-header-cell *matHeaderCellDef> Delete </th>
+    <td mat-cell *matCellDef="let element"> <button class="btn btn-danger" (click)="removeEmployee(element)">Delete</button></td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;" class="el-row-element"></tr>
+        </table>
+    </div>
+</div>

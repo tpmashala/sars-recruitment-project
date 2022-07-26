@@ -1,193 +1,228 @@
-<br />
-<br />
-<h2 class="h2 text-left">Personal Details</h2>
+<div class="row pd-main">
+  
+  
 <div class="text-left">
+  <h2 >Personal Details</h2>
   <form [formGroup]="employeeFormGroup" (ngSubmit)="onFormSubmit()">
-    <p>
+    <div style="display: inline-block; margin-right: 30px;">
       <input
         type="text"
         id="firstname"
+        class="form-control"
         name="firstname"
         placeholder="First Name"
         formControlName="firstname"
-      />
-    </p>
-    <p>
+        required/>
+        <div *ngIf="firstname.invalid && (firstname.dirty || firstname.touched)"
+              class="alert alert-danger">
+          <div *ngIf="firstname.errors?.required">
+            The first name is required.
+          </div>
+          <div *ngIf="firstname.errors?.minlength">
+            The first name must be at least 2 characters long.
+          </div>
+        </div>
+    </div>
+    <div style="display: inline-block">
       <input
         type="text"
         id="lastname"
         name="lastname"
+        class="form-control"
         placeholder="Last Name"
         formControlName="lastname"
-      />
-    </p>
-    <p>
+        required/>
+        <div *ngIf="lastname.invalid && (lastname.dirty || lastname.touched)"
+              class="alert alert-danger">
+          <div *ngIf="lastname.errors?.required">
+            The last name is required.
+          </div>
+          <div *ngIf="lastname.errors?.minlength">
+            The last name must be at least 2 characters long.
+          </div>
+        </div>
+    </div>
+    <div >
       <input
-        type="text"
+        type="email"
         id="email"
         name="email"
+        class="form-control"
         placeholder="Email"
         formControlName="email"
-      />
-    </p>
+        required/>
+        <div *ngIf="email.invalid && (email.dirty || email.touched)"
+              class="alert alert-danger">
+          <div *ngIf="email.errors?.required">
+            The email is required.
+          </div>
+          <div *ngIf="email.errors?.email">
+            The email address is invalid.
+          </div>
+        </div>
+    </div>
 
     <div class="contacts">
       <div class="text-left">
+        <br/>
         <div formGroupName="contactDetailsFormGroup">
           <h2 class="h2 text-left">Contact Details</h2>
 
-          <label class="text-left" for="address">Phone Numbers</label>
-          <br />
-          <div style="display: inline-block;">
+          <h4><strong>Phone Numbers</strong></h4>
+          <div>
             <input
-              type="text"
-              id="landlineNumber"
-              name="landlineNumber"
-              placeholder="Landline Number"
-              formControlName="landlineNumber"
-            />
-          </div>
-          <span style="padding-left: 120px;"></span>
-          <div style="display: inline-block;">
-            <input
-              type="text"
+              type="tel"
               id="mobileNumber"
               name="mobileNumber"
+              class="form-control"
               placeholder="Mobile Number"
               formControlName="mobileNumber"
-            />
+              pattern="[0]{1}[0-9]{9}"
+              required/>
           </div>
-          <br /><br /><br />
-
+          <div style="display: inline-block;">
+            <input
+              type="tel"
+              id="landlineNumber"
+              name="landlineNumber"
+              class="form-control"
+              placeholder="Landline Number"
+              formControlName="landlineNumber"
+              pattern="[0]{1}[0-9]{9}"
+            />
+          </div>          
+          <br /><br />
+        <div class="addressDetails">
           <div
             class="residential"
-            style="display: inline-block; overflow: auto;"
           >
-            <label class="text-left" for="address">Residential Address </label>
-            <p>
+            <h4><strong>Residential Address</strong></h4>
               <input
                 type="text"
                 id="addressLine1"
                 name="addressLine1"
+                class="form-control"
                 placeholder="Street No"
                 formControlName="addressLine1"
               />
-            </p>
-            <p>
+            <br/>
               <input
                 type="text"
                 id="addressLine2"
                 name="addressLine2"
+                class="form-control"
                 placeholder="Street Name"
                 formControlName="addressLine2"
               />
-            </p>
-            <p>
+            
               <input
                 type="text"
                 id="surburb"
                 name="surburb"
+                class="form-control"
                 placeholder="Surburb"
                 formControlName="surburb"
               />
-            </p>
-            <p>
+            
               <input
                 type="text"
                 id="city"
                 name="city"
+                class="form-control"
                 placeholder="City"
                 formControlName="city"
               />
-            </p>
-            <p>
+            
               <input
                 type="text"
                 id="postalCode"
                 name="postalCode"
+                class="form-control"
                 placeholder="Postal Code"
                 formControlName="postalCode"
               />
-            </p>
+            <br/>
           </div>
-          <span style="padding-left: 120px;"></span>
-          <div class="postal" style="display: inline-block; overflow: auto;">
-            <label class="text-left" for="address">Postal Address </label>
-            <p>
+          <div class="postal">
+            
+            <h4><strong>Postal Address </strong></h4>
               <input
                 type="text"
                 id="addressLine1"
                 name="addressLine1"
+                class="form-control"
                 placeholder="Street No"
                 formControlName="addressLine1"
               />
-            </p>
-            <p>
+           
               <input
                 type="text"
                 id="addressLine2"
                 name="addressLine2"
+                class="form-control"
                 placeholder="Street Name"
                 formControlName="addressLine2"
               />
-            </p>
-            <p>
+            
               <input
                 type="text"
                 id="surburb"
                 name="surburb"
+                class="form-control"
                 placeholder="Surburb"
                 formControlName="surburb"
               />
-            </p>
-            <p>
+            
               <input
                 type="text"
                 id="city"
                 name="city"
+                class="form-control"
                 placeholder="City"
                 formControlName="city"
               />
-            </p>
-            <p>
+            
               <input
                 type="text"
                 id="postalCode"
                 name="postalCode"
+                class="form-control"
                 placeholder="Postal Code"
                 formControlName="postalCode"
               />
-            </p>
-          </div>
-          <p>
-            <label for="isSameAddress"
-              >Postal same as Residential Address</label
-            >
-            <input
+              
+              <input
               type="checkbox"
               id="isSameAddress"
               name="isSameAddress"
-              formControlName="isSameAddress"
+              class="form-control checkbox"
+              formControlName="isSameAddress"                
             />
-          </p>
-          <p>
+            <label for="isSameAddress" class="checkboxlabel"
+            > <strong>Same as residential</strong></label
+          ><br/><br/>
+          </div>
+          </div>
+          <div>
             <!--<label for="socialMedia"></label>-->
-            <input
+            <input 
               type="text"
               id="socialMedia"
               placeholder="Social Media"
+              class="form-control"
               name="socialMedia"
               formControlName="socialMedia"
+              
             />
-          </p>
+            <br/>
+          </div>
         </div>
       </div>
     </div>
-    <p>
+    <div class="btns">
       <button class="btn btn-primary" type="submit">Submit</button>
-    </p>
+      <button class="btn btn-warning" type="reset">Clear</button>
+    </div>
   </form>
 </div>
-
-<!--[formGroup]="contactDetailsFormGroup"
-[contactDetailsFormGroup]="employeeFormGroup"-->
+</div>

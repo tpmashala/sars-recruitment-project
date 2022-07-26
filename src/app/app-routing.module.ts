@@ -8,7 +8,7 @@ import { ViewEmployeeDetailsComponent } from './pages/view-employee-details/view
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'employee', component: EmployeeInformationComponent },
-  { path: 'empslist', component: EmployeesListComponent },
+  { path: 'emplist', component: EmployeesListComponent },
   { path: 'editemployee', component: ViewEmployeeDetailsComponent },
   { path: '**', redirectTo: '' }
 ];

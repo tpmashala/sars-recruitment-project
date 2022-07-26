@@ -1,0 +1,14 @@
+.el-main{
+    margin: 10px 10px 0 20px;
+}
+table {
+    width: 100%;
+  }
+
+tr.el-row-element:hover {
+    background: whitesmoke;
+}
+
+tr.el-row-element:active {
+    background: #efefef;
+}

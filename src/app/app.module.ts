@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -11,8 +12,10 @@ import { EmployeesListComponent } from './pages/employees-list/employees-list.co
 import { ViewEmployeeDetailsComponent } from './pages/view-employee-details/view-employee-details.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
+import {MatNativeDateModule} from '@angular/material/core';
 import { HomeComponent } from './pages/home/home.component';
 import { ConfirmCapturedDataComponent } from './pages/confirm-captured-data/confirm-captured-data.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -30,7 +33,10 @@ import { ConfirmCapturedDataComponent } from './pages/confirm-captured-data/conf
     BrowserModule,
     AppRoutingModule,
     NoopAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    MatNativeDateModule,
+    BrowserAnimationsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

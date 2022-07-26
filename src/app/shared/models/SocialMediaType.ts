@@ -1,0 +1,6 @@
+export enum  SocialMediaType {
+    LINKEDIN="LINKEDIN",
+	FACEBOOK="FACEBOOK",
+	TWITTER="TWITTER",
+	INSTAGRAM="INSTAGRAM"
+}
